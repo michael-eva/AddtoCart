@@ -1,6 +1,6 @@
 //these modules need to be imported in order for the firebase DB to work
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 // This is the URL for the firebase database we've created
 const appSettings = {
@@ -67,7 +67,7 @@ function render(item) {
     newEl.addEventListener("click", function () {
         let exactLocationOfItemInDB = ref(database, `shoppingList/${itemValue}`)
 
-        this.remove(exactLocationOfItemInDB)
+        remove(exactLocationOfItemInDB)
         // console.log(itemValue)
         // console.log(shoppingList)
 
