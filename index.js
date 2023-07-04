@@ -65,7 +65,7 @@ function render(item) {
 
 
     newEl.addEventListener("click", function () {
-        let exactLocationOfItemInDB = ref(database, `shoppingList/${item}`)
+        let exactLocationOfItemInDB = ref(database, `shoppingList/${itemValue}`)
 
         this.remove(exactLocationOfItemInDB)
         // console.log(itemValue)
@@ -79,5 +79,5 @@ function clearInput() {
     inputEl.value = null
 }
 function clearShoppingListEl() {
-    shoppingListEl.innerHTML = ""
+    shoppingListEl.innerHTML = null
 }
